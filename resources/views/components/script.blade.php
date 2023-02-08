@@ -17,3 +17,4 @@
 <script src="{{ asset('template/assets/js/custom.js') }}"></script>
 
 <!-- Page Specific JS File -->
+<script src="{{ asset('template/assets/js/page/auth-register.js') }}"></script>

@@ -7,7 +7,7 @@
         </div>
         <!-- content -->
         <div class="section-body">
-            <h4>heyy content...</h4>
+            <h5>Welcome in the Larastis, <b class='text-dark'>{{ auth()->user()->name }}</b></h5>
         </div>
     </section>
 @endsection
