@@ -20,7 +20,7 @@ Route::redirect('/', '/dashboard');
 Route::middleware(['auth', 'verified'])->group(function(){
     Route::get('/dashboard', function () {
         return view('dashboard.index');
-    });
+    })->middleware('can:dashboard');
 });
 // Route::get('/login', function () {
 //     return view('auth.login');
