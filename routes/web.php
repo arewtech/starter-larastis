@@ -18,9 +18,12 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::redirect('/', '/dashboard');
 Route::middleware(['auth', 'verified'])->group(function(){
-    Route::get('/dashboard', function () {
+    Route::get('dashboard', function () {
         return view('dashboard.index');
-    })->middleware('can:dashboard');
+    })->name('dashboard');
+    Route::get('change-profile', function () {
+        return view('dashboard.profile.index');
+    })->name('profile');
 });
 // Route::get('/login', function () {
 //     return view('auth.login');

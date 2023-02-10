@@ -11,7 +11,7 @@
 <script src="{{ asset('template/assets/js/stisla.js') }}"></script>
 
 <!-- JS Libraies -->
-
+@stack('custom-summerjs')
 <!-- Template JS File -->
 <script src="{{ asset('template/assets/js/scripts.js') }}"></script>
 <script src="{{ asset('template/assets/js/custom.js') }}"></script>
