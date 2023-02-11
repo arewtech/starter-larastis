@@ -68,6 +68,53 @@
                             </a>
                         </div>
                     </div>
+                    <!-- change password -->
+                    <div class="card">
+                        <form method="post" class="needs-validation" action="{{ route('user-password.update') }}">
+                            @csrf
+                            @method('PUT')
+                            <div class="card-header">
+                                <h4>Edit Password</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-12">
+                                        <label>Current Password</label>
+                                        <input type="password" name="current_password"
+                                            class="form-control @error('current_password', 'updatePassword') is-invalid @enderror">
+                                        @error('current_password', 'updatePassword')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label>New Password</label>
+                                        <input type="password" name="password"
+                                            class="form-control @error('password', 'updatePassword') is-invalid @enderror">
+                                        @error('password', 'updatePassword')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label>Password Confirmation</label>
+                                        <input type="password" name="password_confirmation"
+                                            class="form-control @error('password_confirmation', 'updatePassword') is-invalid @enderror">
+                                        @error('password_confirmation', 'updatePassword')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-top: 0" class="card-footer text-right">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-7">
                     <div class="card">
