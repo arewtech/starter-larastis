@@ -18,7 +18,6 @@
             <p class="section-lead">
                 Change information about yourself on this page.
             </p>
-
             <div class="row mt-sm-4">
                 <div class="col-12 col-md-12 col-lg-5">
                     <div class="card profile-widget">
@@ -49,7 +48,7 @@
                             @if (Auth::user()->bio)
                                 {!! Auth::user()->bio !!}
                             @else
-                                Bio belum di isi...
+                                Artinya apa bang messi??...
                             @endif
                         </div>
                         <div class="card-footer text-center">
@@ -165,9 +164,10 @@
                                 <div class="row">
                                     <div style="margin-bottom: 0" class="form-group col-12">
                                         <label>Bio</label>
-                                        <textarea name="bio" class="form-control summernote-simple @error('bio') is-invalid @enderror">{{ Auth::user()->bio }}</textarea>
+                                        <textarea name="bio"
+                                            class="form-control summernote-simple @error('bio', 'updateProfileInformation') is-invalid @enderror">{{ Auth::user()->bio }}</textarea>
                                     </div>
-                                    @error('bio')
+                                    @error('bio', 'updateProfileInformation')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

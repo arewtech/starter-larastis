@@ -28,8 +28,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'max:255',
                 Rule::unique('users')->ignore($user->id),
             ],
-            'phone' => ['numeric', 'digits_between:8,15'],
-            'bio' => ['string', 'max:255'],
+            'phone' => ['digits_between:8,15'],
+            'bio' => ['max:255'],
         ])->validateWithBag('updateProfileInformation');
 
         if ($input['email'] !== $user->email &&
