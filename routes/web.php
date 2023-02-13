@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::redirect('/', '/dashboard');
-Route::middleware(['auth', 'verified'])->group(function(){
+
+// if you want to use e-mail verify, set "verified" | (['auth', 'verified']) in middleware,
+// and open comment in route FortifyServiceProvider *verifyEmailView *
+Route::middleware('auth')->group(function(){
     Route::get('dashboard', function () {
         return view('dashboard.index');
     })->name('dashboard');
@@ -25,9 +25,3 @@ Route::middleware(['auth', 'verified'])->group(function(){
         return view('dashboard.profile.index');
     })->name('profile');
 });
-// Route::get('/login', function () {
-//     return view('auth.login');
-// })->name('login');
-// Route::get('/register', function () {
-//     return view('auth.register');
-// })->name('register');

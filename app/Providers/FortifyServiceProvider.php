@@ -50,9 +50,10 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.register');
         });
 
-        Fortify::verifyEmailView(function() {
-            return view('auth.verify');
-        });
+        // open this comment if u want to user email verify
+        // Fortify::verifyEmailView(function() {
+        //     return view('auth.verify');
+        // });
 
         Fortify::requestPasswordResetLinkView(function() {
             return view('auth.forgot');
