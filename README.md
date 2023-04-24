@@ -6,7 +6,7 @@
 
 - Authentication
 - Password reset
-- Email verification
+- Email verification (inactive)
 - Update profile
 
 ## Dashboard
@@ -18,10 +18,6 @@ Preview Dashboard
 Preview Update Profile
 
 ![larastis](/public/preview/update-profile.png)
-
-Preview Email Verification
-
-![larastis](/public/preview/verified.png)
 
 ### satset
 
