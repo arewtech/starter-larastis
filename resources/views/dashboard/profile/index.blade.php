@@ -22,7 +22,9 @@
                 <div class="col-12 col-md-12 col-lg-5">
                     <div class="card profile-widget">
                         <div class="profile-widget-header">
-                            <img alt="image" src="{{ asset('template/assets/img/avatar/avatar-1.png') }}"
+                            <img alt="image"
+                                src="
+                            {{ Auth::user()->image !== null ? asset('storage/' . Auth::user()->image) : asset('template/assets/img/avatar/avatar-1.png') }}"
                                 class="rounded-circle profile-widget-picture">
                             <div class="profile-widget-items">
                                 <div class="profile-widget-item">
@@ -118,7 +120,7 @@
                 <div class="col-12 col-md-12 col-lg-7">
                     <div class="card">
                         <form method="post" class="needs-validation"
-                            action="{{ route('user-profile-information.update') }}">
+                            action="{{ route('user-profile-information.update') }}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="card-header">
@@ -159,6 +161,20 @@
                                                 {{ $message }}
                                             </div>
                                         @enderror
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-12">
+                                        <label class="">Thumbnail</label>
+                                        <div class="col-sm-12 col-md-7 px-0">
+                                            <div id="image-preview" class="image-preview"
+                                                style="width: 150px; height: 150px; border-radius: 50%">
+                                                <label style="scale: 0.6" for="image-upload" id="image-label">Choose
+                                                    File</label>
+                                                <input type="file" name="image" id="image-upload"
+                                                    accept="image/*" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
