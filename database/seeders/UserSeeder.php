@@ -17,22 +17,26 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name' => 's admin',
-            'email' => 'superadmin@gmail.com',
-            'email_verified_at' => now(),
-            'role' => 'superadmin',
-            'password' => bcrypt('admin'), //admin
-            'remember_token' => Str::random(10),
-        ]);
-
-        User::create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'email_verified_at' => now(),
-            'role' => 'admin',
-            'password' => bcrypt('admin'), //admin
-            'remember_token' => Str::random(10),
-        ]);
+        $users = [
+            [
+                'name' => 's admin',
+                'email' => 'superadmin@gmail.com',
+                'email_verified_at' => now(),
+                'role' => 'superadmin',
+                'password' => bcrypt('admin'), //admin
+                'remember_token' => Str::random(10),
+            ],
+            [
+                'name' => 'admin',
+                'email' => 'admin@gmail.com',
+                'email_verified_at' => now(),
+                'role' => 'admin',
+                'password' => bcrypt('admin'), //admin
+                'remember_token' => Str::random(10),
+            ],
+        ];
+        foreach ($users as $user) {
+            User::create($user);
+        }
     }
 }
